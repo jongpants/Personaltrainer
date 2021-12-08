@@ -1,23 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {useRef} from 'react';
-import {AgGridReact} from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
-import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
-import AddIcon from '@mui/icons-material/Add';
-import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
 import '@mui/material/Grid';
-import {DataGrid} from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import syncFetch from 'sync-fetch';
 import { format } from 'date-fns';
+import Deletetraining from './Deletetraining';
 
 
 function Traininglist() {
   const [training, setTraining] = useState([]);
+  const [pageSize, setPageSize] = React.useState(10);
 
   const fetchData = () => {
     fetch('https://customerrest.herokuapp.com/api/trainings')
@@ -35,20 +28,34 @@ function Traininglist() {
 
   useEffect(() => fetchData(), []);
 
-  const gridRef = useRef();
+  const removeTraining = (link) => {
+    console.log(link)
+    fetch(link, {method: 'DELETE'})
+    .then(res => fetchData())
+    .catch(err => console.error(err))
+  };
 
   const columns = [
-    // { field: 'id', headername: 'ID'},
+    {
+      headerName: '',
+      field: 'Delete',
+      disableExport: true,
+      sortable: false,
+      filterable: false,
+      flex: 1,
+      renderCell: (row) => (
+        <Deletetraining deleteTraining={removeTraining} training={row.row} />
+      ),
+    },
     {
       headerName: 'Activity',
       field: 'activity',
-      flex: 1,
-      editable: true
+      flex: 28,
     },
     {
       headerName: 'Date',
       field: 'date',
-      flex: 1,
+      flex: 28,
       valueFormatter: (params) => {
         return format(new Date (params.value), 'dd/MM/yyy');
       }
@@ -56,23 +63,22 @@ function Traininglist() {
     {
       headerName: 'Duration (min)',
       field: 'duration',
-      flex: 1,
+      flex: 28,
     },
     {
       headerName: 'Customer',
       field: 'customer',
-      flex: 1,
+      flex: 28,
     },
   ];
 
   return(
-    <div className='ag-theme-material' style={{width: '100%'}}>  
+    <div> 
     <DataGrid
       sx={{
         m: 2,
-        height: 1,
-        boxShadow: 2,
-        border: 1,
+        mt: 5,
+        border: 0,
         borderColor: 'success.light',
         '& .MuiDataGrid-cell:hover': {
           color: 'success.main',
@@ -81,9 +87,14 @@ function Traininglist() {
       rows={training}
       columns={columns}
       autoHeight
-      checkboxSelection
+      //autoPageSize
+      //checkboxSelection
       disableSelectionOnClick
-      editMode= 'row'
+      disableColumnMenu
+      
+      pageSize={pageSize}
+      onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+      rowsPerPageOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
     />
     </div>
   );

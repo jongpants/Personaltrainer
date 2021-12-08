@@ -28,7 +28,7 @@ function App() {
           onChange={handleChange}
           color='inherit'
           textColor='inherit'
-          centered
+          variant='fullWidth'
         >
           <Tab value='one' label='Customers' />
           <Tab value='two' label='Trainings' />
