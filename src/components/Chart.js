@@ -7,7 +7,7 @@ import {
     Tooltip,
     Legend,
     ResponsiveContainer
-  } from "recharts";
+  } from 'recharts';
 import React, {useState, useEffect} from 'react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
@@ -54,12 +54,12 @@ import '@mui/material/Grid';
                     //    right: 30    
                     //}}
                 >
-                    <CartesianGrid strokeDasharray="10 10" />
-                    <XAxis dataKey="name" />
+                    <CartesianGrid strokeDasharray='10 10' />
+                    <XAxis dataKey='name' />
                     <YAxis />
                     <Tooltip />
-                    <Legend align="center" height={1} />
-                    <Bar dataKey="minutes" fill="#349133" />
+                    <Legend align='center' height={1} />
+                    <Bar dataKey='minutes' fill='#349133' />
                 </BarChart>
             </ResponsiveContainer>
         </div>

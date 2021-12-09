@@ -10,9 +10,6 @@ import syncFetch from 'sync-fetch';
 import { format } from 'date-fns';
 import Deletetraining from './Deletetraining';
 
-<link rel="stylesheet" href="App.css"></link>
-
-
 function Traininglist() {
   const [training, setTraining] = useState([]);
   //const [pageSize, setPageSize] = React.useState(10); 

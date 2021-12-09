@@ -44,7 +44,7 @@ export default function Deletecustomer(props) {
                 onClose={handleClose}
             >
                 <DialogTitle color='error'>
-                    {"Delete customer?"}
+                    {'Delete customer?'}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText color='text'>

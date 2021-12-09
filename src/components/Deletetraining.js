@@ -41,14 +41,14 @@ export default function Deletetraining(props) {
             <Dialog
                 open={open}
                 onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
+                aria-labelledby='alert-dialog-title'
+                aria-describedby='alert-dialog-description'
             >
-                <DialogTitle color='error' id="alert-dialog-title">
-                    {"Delete a training?"}
+                <DialogTitle color='error' id='alert-dialog-title'>
+                    {'Delete a training?'}
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText color='text' id="alert-dialog-description">
+                    <DialogContentText color='text' id='alert-dialog-description'>
                         Deleting a training will only delete this training and the customer will remain.
                     </DialogContentText>
                 </DialogContent>
