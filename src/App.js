@@ -22,7 +22,7 @@ function App() {
       <AppBar position='static' color='success' >
         <ToolBar variant='dense'>
           <Typography variant='h6'>
-            Frontend Personaltrainer
+            Front End Personal trainer
           </Typography>
         </ToolBar>
         <Tabs 
