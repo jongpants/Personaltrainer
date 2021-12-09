@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import AddIcon from '@mui/icons-material/Add';
 
-// -- Hugely edited version of Carshop Addcar tutorial --
+// -- Edited version of Carshop Addcar tutorial --
 
 export default function Addcustomer(props) {
     const [open, setOpen] = React.useState(false);

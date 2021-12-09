@@ -13,7 +13,7 @@ import Addtraining from './Addtraining';
 
 function Customerlist() {
   const [customer, setCustomer] = useState([]);
-  const [pageSize, setPageSize] = React.useState(10);
+  //const [pageSize, setPageSize] = React.useState(10);
 
   const fetchData = () => {
     fetch('https://customerrest.herokuapp.com/api/customers')
@@ -109,46 +109,61 @@ function Customerlist() {
     {
       headerName: 'First Name',
       field: 'firstname',
-      flex: 15
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100
     },
     {
       headerName: 'Last Name',
       field: 'lastname',
-      flex: 15
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100
     },
     {
       headerName: 'Street Address',
       field: 'streetaddress',
-      flex: 15
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100
     },
     {
       headerName: 'Postcode',
       field: 'postcode',
-      flex: 15
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100
     },
     {
       headerName: 'City',
       field: 'city',
-      flex: 15
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100
     },
     {
       headerName: 'Email',
       field: 'email',
-      flex: 15
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100
     },
     {
       headerName: 'Phone',
       field: 'phone',
-      flex: 15,
+      headerAlign: 'right',
+      align: 'right',
+      flex: 100,
     },
   ];
 
   return(
-    <div> 
+    <div className='listViewPort'> 
     <Addcustomer addCustomer={saveCustomer} /> 
     <DataGrid
       sx={{
-        m: 2,
+        ml: 2,
+        mr: 2,
         mt: 5,
         border: 0,
         borderColor: 'success.light',
@@ -158,18 +173,16 @@ function Customerlist() {
       }}
       rows={customer}
       columns={columns}
-      autoHeight
-      //autoPageSize
+      //autoHeight
+      autoPageSize
       //checkboxSelection
       disableSelectionOnClick
       disableColumnMenu
-      
-      pageSize={pageSize}
-      onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-      rowsPerPageOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
+      //pageSize={pageSize}
+      //onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+      //rowsPerPageOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
       components={{
         Toolbar: GridToolbar,
-        color: 'success'
       }}
     />
     </div>

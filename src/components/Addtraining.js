@@ -7,8 +7,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Tooltip from '@mui/material/Tooltip';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import IconButton from '@mui/material/IconButton';
 
-// -- Hugely edited version of Carshop Addcar tutorial --
+// -- Edited version of Carshop Addcar tutorial --
 
 export default function Addtraining(props) {
     const [open, setOpen] = React.useState(false);
@@ -40,12 +41,15 @@ export default function Addtraining(props) {
     return(
         <div>
             <Tooltip title='Add training for customer'>
-                <Button
+                <IconButton
+                    sx={{
+                        ml: -1.35,
+                      }}
                     size='large'
                     color='success'
-                    startIcon={<FitnessCenterIcon />}
                     onClick={handleClickOpen}>
-                </Button>
+                    <FitnessCenterIcon fontSize='inherit' />
+                </IconButton>
             </Tooltip>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle color='green' >Add Training</DialogTitle>

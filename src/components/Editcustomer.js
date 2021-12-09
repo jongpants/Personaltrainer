@@ -7,8 +7,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import EditIcon from '@mui/icons-material/Edit';
 import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
 
-// -- Hugely edited version of Carshop Editcar tutorial --
+// -- Edited version of Carshop Editcar tutorial --
 
 export default function Editcustomer(props) {
     const [open, setOpen] = React.useState(false);
@@ -47,12 +48,15 @@ export default function Editcustomer(props) {
     return(
         <div>
             <Tooltip title='Edit this row'>
-                <Button
+                <IconButton
+                    sx={{
+                        ml: -1.35,
+                      }}
                     size='large'
                     color='secondary'
-                    startIcon={<EditIcon />}
                     onClick={handleClickOpen}>
-                </Button>
+                    <EditIcon fontSize='inherit' />
+                </IconButton>
             </Tooltip>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle color='secondary' >Edit Customer</DialogTitle>

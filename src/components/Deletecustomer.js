@@ -7,6 +7,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import IconButton from '@mui/material/IconButton';
+
 
 export default function Deletecustomer(props) {
     const [open, setOpen] = React.useState(false);
@@ -27,19 +29,22 @@ export default function Deletecustomer(props) {
     return(
         <div>
            <Tooltip title='Delete this row'>
-                <Button
+                <IconButton
+                    sx={{
+                        ml: -1.35,
+                      }}
                     size='large'
                     color='error'
-                    startIcon={<DeleteIcon />}
                     onClick={handleClickOpen}>
-                </Button>
+                    <DeleteIcon fontSize='inherit' />
+                </IconButton>
             </Tooltip>
             <Dialog
                 open={open}
                 onClose={handleClose}
             >
                 <DialogTitle color='error'>
-                    {"Delete a customer?"}
+                    {"Delete customer?"}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText color='text'>

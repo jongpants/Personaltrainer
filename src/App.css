@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.listViewPort {
+  height: 85vh;
+}
+
+.chartViewPort {
+  height: 78vh;
+  width: 99%;
+  margin-top: 5.2vh;
+}

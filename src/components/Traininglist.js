@@ -2,28 +2,37 @@ import React, {useState, useEffect} from 'react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import '@mui/material/Grid';
-import { DataGrid } from '@mui/x-data-grid';
+import {
+  DataGrid,
+  GridToolbar,
+} from '@mui/x-data-grid';
 import syncFetch from 'sync-fetch';
 import { format } from 'date-fns';
 import Deletetraining from './Deletetraining';
 
+<link rel="stylesheet" href="App.css"></link>
+
 
 function Traininglist() {
   const [training, setTraining] = useState([]);
-  const [pageSize, setPageSize] = React.useState(10);
+  //const [pageSize, setPageSize] = React.useState(10); 
 
   const fetchData = () => {
-    fetch('https://customerrest.herokuapp.com/api/trainings')
-    .then(response => response.json())
-    .then(data => {
-      data.content.forEach((training, index) => {
-        training.id = index;
-        var data = syncFetch(training.links[2].href).json()
-        training.customer = data.firstname + ' ' + data.lastname;
-      });
-      setTraining(data.content)
-    })
-    .catch(err => console.error(err))
+    try {
+      fetch('https://customerrest.herokuapp.com/api/trainings')
+      .then(response => response.json())
+      .then(data => {
+        data.content.forEach((training, index) => {
+          training.id = index;
+          var data = syncFetch(training.links[2].href).json();
+          training.customer = data.firstname + ' ' + data.lastname;
+        });
+        setTraining(data.content)
+      })
+      .catch(err => console.error(err))     
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => fetchData(), []);
@@ -50,12 +59,16 @@ function Traininglist() {
     {
       headerName: 'Activity',
       field: 'activity',
-      flex: 28,
+      headerAlign: 'right',
+      align: 'right',
+      flex: 180,
     },
     {
       headerName: 'Date',
       field: 'date',
-      flex: 28,
+      headerAlign: 'right',
+      align: 'right',
+      flex: 180,
       valueFormatter: (params) => {
         return format(new Date (params.value), 'dd/MM/yyy');
       }
@@ -63,20 +76,25 @@ function Traininglist() {
     {
       headerName: 'Duration (min)',
       field: 'duration',
-      flex: 28,
+      headerAlign: 'right',
+      align: 'right',
+      flex: 180,
     },
     {
       headerName: 'Customer',
       field: 'customer',
-      flex: 28,
+      headerAlign: 'right',
+      align: 'right',
+      flex: 180,
     },
   ];
 
   return(
-    <div> 
+    <div className='listViewPort'> 
     <DataGrid
       sx={{
-        m: 2,
+        ml: 2,
+        mr: 2,
         mt: 5,
         border: 0,
         borderColor: 'success.light',
@@ -86,15 +104,17 @@ function Traininglist() {
       }}
       rows={training}
       columns={columns}
-      autoHeight
-      //autoPageSize
+      //autoHeight
+      autoPageSize
       //checkboxSelection
       disableSelectionOnClick
       disableColumnMenu
-      
-      pageSize={pageSize}
-      onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-      rowsPerPageOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
+      //pageSize={pageSize}
+      //onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+      //rowsPerPageOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
+      components={{
+        Toolbar: GridToolbar,
+      }}
     />
     </div>
   );
