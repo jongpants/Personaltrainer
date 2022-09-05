@@ -9,7 +9,7 @@ The application is made with JavasScript, React, MaterialUI and AG Grid. Additio
 
 </br>
 
-**The pictures shown below are quite low quality without clicking on them to see the actual picture file**
+**The pictures shown below are quite low quality without zooming in or clicking on them to open the actual picture file**
 
 <h1>Customers Tab and Trainings Tab</h1>
 
