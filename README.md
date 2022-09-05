@@ -5,7 +5,7 @@ This web application is made by Jong Lau for Haaga-Helias Front End Development 
 
 </br>
 </br>
-The application is made with JavasScript, React, MaterialUI and AG Grid. Additional imports include some pictures for buttons and Recharts for the chart tab of the application. The application should have all needed/wanted functionalities any typical list type application has, like adding, deleting, sorting, filtering, exporting data, resizing flexibility and pages. Since this course wanted us to make a web application, the phone view was not considered here hence it is almost unusable in phone. The application in then uploaded to Heroku as part of the project grading, if asked I can provide the link to the website.
+The application is made with JavasScript, React, MaterialUI and AG Grid. Additional imports include some pictures for buttons and Recharts for the chart tab of the application. The application should have all needed/wanted functionalities any typical list type application has, like adding, deleting, sorting, filtering, exporting data, resizing flexibility and pages. Since this course wanted us to make a web application, the phone view was not considered here hence it is almost unusable in phone. The application is then uploaded to Heroku as part of the project grading, if asked I can provide the link to the website.
 
 </br>
 
