@@ -5,19 +5,23 @@ This web application is made by Jong Lau for Haaga-Helias Front End Development 
 
 </br>
 </br>
-The application is made with JavasScript, React, MaterialUI and AG Grid. Additional imports include some pictures for buttons and Recharts for the chart tab of the application. The application should have all needed/wanted functionalities any typical list type application has, like adding, deleting, sorting, filtering, exporting data, resizing flexibility and pages. Since this course wanted us to make a web application, the phone view was not considered here hence it is almost unsuable in phone.
+The application is made with JavasScript, React, MaterialUI and AG Grid. Additional imports include some pictures for buttons and Recharts for the chart tab of the application. The application should have all needed/wanted functionalities any typical list type application has, like adding, deleting, sorting, filtering, exporting data, resizing flexibility and pages. Since this course wanted us to make a web application, the phone view was not considered here hence it is almost unusable in phone.
 
 </br>
-<h1>Opening application and search by name</h1>
+<h1>Customers Tab and Trainings Tab</h1>
 
-![OpeningApplication](readMePictures/OpeningApplication.png) ![List](readMePictures/List.png)
+![customers](readMePictures/customers.png) ![trainings](readMePictures/trainings.png)
+
+<h1>Chart Tab</h1>
+
+![chart](readMePictures/chart.png)
 
 </br>
-<h1>Swipe functionality and full drink details</h1>
+<h1>Adding New Customer and Editing Functionalities</h1>
 
-![SearchByName](readMePictures/SearchByName.png) ![FullRecipe](readMePictures/FullRecipe.png)
+![addCustomer](readMePictures/addCustomer.png) ![editCustomer](readMePictures/editCustomer.png)
 
 </br>
-<h1>Search by ingredient</h1>
+<h1>Addng New Training For Customer</h1>
 
-![Popup](readMePictures/Popup.png) ![SearchByIngredient](readMePictures/SearchByIngredient.png)
+![addTraining](readMePictures/addTraining.png)
